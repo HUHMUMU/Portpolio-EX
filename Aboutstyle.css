@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(224, 224, 224);
+}
+header{
+    font-family: 'Nanum Pen Script', cursive;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(189, 189, 189);
+    position: fixed;
+    opacity: 0.8;
+    z-index: 900; /* 포지션 fixed이기도 하고 배경화면에 가려져서 최상위로 올림 */
+}
+header a{
+    text-decoration: none;
+    color: rgb(99, 99, 99);
+}
+header a:active{
+    color: orange;
+}
+header section{
+    display: flex;
+    justify-content: space-between;
+}
+header div{
+    margin: 5px, 5%;
+    display: flex;
+    align-items: center;
+}
+.headdiv1{
+    width: 15vw;
+    max-width: 180px;
+    height: 78px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin-left: 5px;
+}
+.fa-id-card{
+    font-size: 40px;
+}
+.headdiv2 ul{
+    width: 100%;
+    list-style: none;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.headdiv2{
+    width: 50vw;
+    max-width: 500px;
+    height: 78px;
+}
+.headdiv3{
+    height: 78px;
+}
+.headdiv3 i{
+    font-size: 30px;
+    color: rgb(99, 99, 99);
+    padding-right: 10px;
+}
+.drop{
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 10px;
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: lightgray;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 10px;
+    display: none;
+}
+.fa-ellipsis:active .drop{
+    /* 클릭시 나오게 하는것까진 성공했는데 클릭했을때 고정되는건 검색하면서 시도하다가 포기함 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    opacity: 0.7;
+    z-index: 999;
+}
+.login{
+    font-family: 'Nanum Pen Script', cursive;
+    position: fixed;
+    right: 5px;
+    margin-top: 83px;
+    color: aliceblue;
+    opacity: 0.7;
+    z-index: 500; /* 포지션 fixed이기도 하고 배경화면에 가려져서 최상위로 올림 */
+}
+.login input{
+    width: 100px; /* 인풋의 길이가 너무 길어서 줄임 */
+}
+.login input::placeholder{ /* 상위 박스인 아티클에 폰트지정해도 플레이스홀더는 안바뀌길래 따로 지정해줌 */
+    font-family: 'Nanum Pen Script', cursive;
+}
+.login button{ /* 상위 박스인 아티클에 폰트지정해도 버튼글씨체는 안바뀌길래 따로 지정해줌 */
+    font-family: 'Nanum Pen Script', cursive;
+}
+/************************** 메인 시작 **************************/
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+.slide-wrap{
+    width: 100%;
+    overflow: hidden;
+    height: 350px;
+}
+.slide-wrap ul{
+    position: relative;
+    list-style: none;
+    width: 5234px; /* 3개의 사진 가로 픽셀값 총합 */
+    height: 350px;
+    animation: slideAni 10s infinite ease-in-out;
+}
+.slide-wrap li{
+    height: 350px;
+    float: left;
+}
+.slide-wrap li:nth-child(1){
+    width: 985px;
+    background-image: url(space1.jpg);
+    background-size: cover;
+}
+.slide-wrap li:nth-child(2){
+    width: 1344px;
+    background-image: url(space2.jpg);
+    background-size: cover;
+}
+.slide-wrap li:nth-child(3){
+    width: 985px;
+    background-image: url(space3.jpg);
+    background-size: cover;
+}
+.slide-wrap li:nth-child(4){  /* 빈공간 메꾸려고 넣은 사진이라서 끝까지 안보이게 놔둠 */
+    width: 1920px;
+    background-image: url(space4.jpg);
+    background-size: cover;
+}
+/* 이 위로 배너슬라이드화면 */
+/* 이 아래로 본문 */
+
+main .text{
+    border: 2px solid rgb(172, 172, 172);
+    border-radius: 30px;
+    width: 70%;
+    height: 1100px;
+    padding: 20px;
+    font-family: 'Nanum Gothic', sans-serif;
+    margin: 30px auto;
+    text-align: center;
+    color:rgb(105, 105, 105)
+}
+main .text p{
+    margin: 20px 0;
+}
+main .text pre{
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+/* 푸터 시작 */
+footer{ /* 11-30일자 붙여넣음 */
+    display: flex;
+    justify-content: left;
+    padding-top: 20px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+footer div{
+    width: 150px;
+}
+footer ul{
+    list-style: none;
+}
+footer a{
+    text-decoration: none;
+    color: gray;
+}
+.navigate, .help, .social{
+    padding-left: 20px;
+}
+.navigate{
+    margin-left: 10%;  /* hr선에 맞추기위해서 퍼센트 사용 */
+}
+footer div ul li:nth-child(1){ /* 첫글자들만 선택 */
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px; /* 진한검은글자 밑으로 간격 */
+}
+.hr{
+    border: 1px solid gray;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+
+
+@keyframes slideAni{
+    0%{left: 0;}
+    12.5%{left:-291.125px;}
+    25%{left: -582.25px;}
+    37.5%{left: -873.5px;}
+    50%{left: -1164.75px;}
+    62.5%{left: -1456px;}
+    75%{left: -1747.25px;}
+    87.5%{left: -2038.5px;}
+    100%{left: -2329.75px;} /* 마지막 사진을 빼고 계산했는데 화면 길이에따라 비는값이생겨서 사진 4번 추가 */
+}
+
+@media screen and (max-width:790px){
+    main .profile-2{
+        height: 520px;
+    }
+    main .profile-2{
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-img{
+        width: 90vw;
+        height: 90vw;
+    }
+}
